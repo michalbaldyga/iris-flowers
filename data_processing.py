@@ -1,4 +1,5 @@
 from constants import FEATURES_NO
+from collections import defaultdict
 
 
 class Flower:
@@ -16,3 +17,11 @@ def parse_data(data):
         label = data.iloc[i][FEATURES_NO - 1]
         elements.append(Flower(point, label))
     return elements
+
+
+def group_flowers(flowers):
+    """Grouping flowers by species."""
+    flowers_by_species = defaultdict(list)
+    for flower in flowers:
+        flowers_by_species[flower.label].append(flower.point)
+    return flowers_by_species
