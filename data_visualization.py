@@ -5,7 +5,6 @@ matplotlib.use('TkAgg')
 
 def plot_features(flowers):
     """Plotting the features to see how they differ by species."""
-
     features = ['sepal length', 'sepal width', 'petal length', 'petal width']
     features_to_explore = [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
     marks = ['+', 'p', '*']
