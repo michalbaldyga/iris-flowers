@@ -1,12 +1,8 @@
 from constants import FEATURES_NO
 from collections import defaultdict
-
-
-class Flower:
-    """Exemplary flower object: ([5.1, 3.5, 1.4, 0.2], 'Iris-setosa')"""
-    def __init__(self, point, label):
-        self.point = point
-        self.label = label
+from Flower import Flower
+from random import shuffle
+from typing import List, Tuple
 
 
 def parse_data(data):
@@ -25,3 +21,11 @@ def group_flowers(flowers):
     for flower in flowers:
         flowers_by_species[flower.label].append(flower.point)
     return flowers_by_species
+
+
+def split_data(dataset: List[Flower], split: float) -> Tuple[List[Flower], List[Flower]]:
+    """Splitting dataset into training set and testing set."""
+    data = dataset.copy()
+    shuffle(data)
+    split_idx = int(split * len(data))
+    return data[:split_idx], data[split_idx:]
