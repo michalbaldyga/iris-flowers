@@ -1,6 +1,6 @@
 # iris-flowers
-KNN model to predict iris plant species.
+My implementation of KNN model to predict iris plant species.
 
-For k-value = 5, model accuracy is about 97%.
+The aim of this project was to understand the logic behind the knn algorithm.
 
-The model was created from scratch.
+I was inspired by the book Data Science from Scratch by Joel Grus.
